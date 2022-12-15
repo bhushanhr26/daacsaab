@@ -1,0 +1,39 @@
+.general-question{
+    font-size: 32px;
+    font-weight:700;
+    line-height:38px;
+}
+.enquiry-div{
+    margin-top: 10%;
+    
+}
+.btn-primary{
+    height:43.55px;
+    width:100px;
+    margin-top:4%;
+    background-color: #bcdd33;
+    border:none;
+    color:#025f4c;
+    font-weight:500;
+    font-size:16px;
+    border-radius: 10px;
+}
+.btn-secondary{
+    height:43.55px;
+    width:268px;
+    margin-top:4%;
+    margin-left:3%;
+    font-weight:500;
+    font-size:16px;
+    border-radius: 10px;
+    color:black;
+    background-color: white;
+}
+.btn-secondary:hover{
+    background-color: #0d6e5e;
+    
+}
+.btn-primary:hover{
+    background-color:#b8e507;
+    color:#025f4c;
+}
