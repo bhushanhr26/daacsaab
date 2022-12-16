@@ -41,3 +41,29 @@ hr{
     margin-top:3%;
     color:#6fa79c
 }
+.testS{
+    padding:15px 20px;
+    background-color: #EAECF1;
+    border-radius:5px;
+}
+.sym-card{
+    cursor: pointer;
+}
+.sym-card:hover{
+    transform:scale(1.06);
+    background-color:#a7d0c4;
+}
+.btn-light{
+    padding:2px 5px;
+    position:relative;
+    left:85%;
+    background-color: #0d6e5e;
+    color:white;
+    border:none;
+    border-radius:5px;
+}
+.btn-light:hover{
+    background-color: #488c80;
+    color:white;
+    
+}
