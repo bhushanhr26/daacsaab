@@ -51,19 +51,38 @@ hr{
 }
 .sym-card:hover{
     transform:scale(1.06);
-    background-color:#a7d0c4;
+    background-color:#bcdd33;
+}
+.sym-card:active{
+    background-color:#bcdd33;
 }
 .btn-light{
-    padding:2px 5px;
+    font-size:15px;
+    padding:2px 10px;
     position:relative;
     left:85%;
-    background-color: #0d6e5e;
+    background-color: #0d6e5e !important;
     color:white;
-    border:none;
+    border:none !important;
     border-radius:5px;
 }
 .btn-light:hover{
     background-color: #488c80;
     color:white;
+}
+.text-1{
+    font-weight:500;
+    font-size:large;
+    color:rgb(158, 152, 152)
+}
+
+.btn-submit{
+    background-color:#bcdd33;
+    color:#025f4c;
+    font-weight:500;
     
+}
+.btn-submit:hover{
+    color:#025f4c;
+    background-color: #b8e507;
 }

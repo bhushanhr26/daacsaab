@@ -11,7 +11,9 @@ function OneTap() {
 const [show,setShow]=useState(true);
 const [symData, setSymData] = useState(data);
 const[buttonText,setButtonText]=useState("Show more Symptoms")
-const changeText=(text)=>setButtonText(text);
+function test(){
+  console.log("symptom is clicked");
+}
   return (
     <div>
       <div className="container">
@@ -23,24 +25,30 @@ const changeText=(text)=>setButtonText(text);
       <div className="selection">
       <button className="btn btn-primary">Yes</button>
       <button className="btn btn-secondary">No, I want to see a specialist</button>
-      
       </div>
-      
       <hr></hr>
       <div>
-        <button onClick={()=>{setShow(false); setButtonText("Show Less")}}  className="btn-light">{buttonText}</button>
-      </div>
+        <span>
+          <p className="text-1">Please select 0-3 Symptoms and Let Us Generate a Prescription for you </p>
+        </span>
+        <span>
+        <button onClick={()=>{setShow(!show); show?setButtonText("Show Less"):setButtonText("Show More Symptoms")}}  className="btn-light">{buttonText}</button>
+      
+        </span>
+        </div>
+
+      {/*  symptoms cards component  */}
       <div className="d-flex flex-wrap ">
-       
       {symData.filter((x,i)=>show?i<18:i).map((x,i)=>{
-      return <div className="testS ms-2 my-2 sym-card"
+      return <div onClick={test} className="testS ms-2 my-2 sym-card"
        key={i}>{x}</div>
           })}
       </div>
-      
-      
+      {/* symptom component ends */}
+      <div className="d-flex justify-content-center mt-4">
+        <button className="btn btn-submit">Generate Prescription</button>
       </div>
-      
+      </div>
     </div>
   )
 }
