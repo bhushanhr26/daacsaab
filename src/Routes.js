@@ -7,7 +7,7 @@ export default function DaacSaabRoutes() {
   return (
     <Suspense fallback={<div></div>}>
       <Routes>
-        <Route exact path="/" element={<Homepage />} />
+        <Route exact path="/home" element={<Homepage />} />
       </Routes>
     </Suspense>
   );
