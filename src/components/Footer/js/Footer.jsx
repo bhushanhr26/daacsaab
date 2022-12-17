@@ -18,6 +18,7 @@ export default function Footer() {
   const classes = useStyles();
   return (
     <div className="parent py-5">
+      dkfbldjfk
       <div className={`${classes.root} container d-flex col-12 py-5`}>
         <div className="col-5 ms-auto d-flex flex-column my-3">
           <img alt="logo" src={logo} className="img-fluid col-4 my-2" />
