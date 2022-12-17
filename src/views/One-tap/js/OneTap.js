@@ -77,7 +77,7 @@ export default function OneTap() {
         <div className="d-flex justify-content-between">
           <p className="text-1">
             Please select 0-3 Symptoms and Let Us Generate a Prescription for
-            you{" "}
+            you
           </p>
           <button
             onClick={() => {
@@ -90,7 +90,7 @@ export default function OneTap() {
         </div>
         {/*  symptoms cards component  */}
         <div className="d-flex flex-wrap ">
-          {symData.map((x, i) => {
+          {(show?symData.slice(0,15):symData).map((x, i) => {
             return (
               <div
                 key={i}
@@ -109,9 +109,9 @@ export default function OneTap() {
           })}
         </div>
         <button onClick={() => setShowModal(true)}>sfdvsfvsfvsfv</button>
-        {console.log(selectedSymptom.length, "abc")}
+        
         {/* symptom component ends */}
-        <div className="d-flex justify-content-center mt-4">
+        <div className="d-flex justify-content-center mt-4 mb-5">
           <button className="btn btn-submit">Generate Prescription</button>
         </div>
       </div>
