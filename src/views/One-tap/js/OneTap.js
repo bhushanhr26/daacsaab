@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import "../css/oneTap.css";
+import Modal from "@mui/material/Modal";
+import { Box, Typography } from "@mui/material";
 
 const data = [
   "Headache",
@@ -45,6 +47,7 @@ export default function OneTap() {
   const [show, setShow] = useState(true);
   const [symData, setSymData] = useState([...data]);
   const [selectedSymptom, setSelectedSymptom] = useState([]);
+  const [showModal, setShowModal] = useState(false);
 
   const handleSymptomColor = (symptom) => {
     if (!selectedSymptom.includes(symptom)) {
@@ -87,10 +90,6 @@ export default function OneTap() {
         </div>
         {/*  symptoms cards component  */}
         <div className="d-flex flex-wrap ">
-          {/* {symData.slice((x, i) => show ? i < 18 : i).map((x, i) => {
-            return <div onClick={() => { handleSymptomColor(i) }} className={`m-2 ${selectedSymptom.includes(i) ? "selectedSymptomColor" : "sym-card"}`}
-              key={i}>{x}</div>
-          })} */}
           {symData.map((x, i) => {
             return (
               <div
@@ -109,10 +108,24 @@ export default function OneTap() {
             );
           })}
         </div>
-        {console.log(selectedSymptom, "abc")};{/* symptom component ends */}
+        <button onClick={() => setShowModal(true)}>sfdvsfvsfvsfv</button>
+        {console.log(selectedSymptom.length, "abc")}
+        {/* symptom component ends */}
         <div className="d-flex justify-content-center mt-4">
           <button className="btn btn-submit">Generate Prescription</button>
         </div>
+      </div>
+      <div>
+        <Modal open={showModal}>
+          <Box>
+            <Typography id="modal-modal-title" variant="h6" component="h2">
+              Text in a modal
+            </Typography>
+            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+              Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+            </Typography>
+          </Box>
+        </Modal>
       </div>
     </div>
   );
