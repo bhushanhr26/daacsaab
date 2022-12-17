@@ -1,8 +1,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import "../css/oneTap.css";
-import Modal from "@mui/material/Modal";
-import { Box, Typography } from "@mui/material";
+
 
 const data = [
   "Headache",
@@ -44,6 +43,7 @@ const data = [
 ];
 
 export default function OneTap() {
+  const [showOneTap, setShowOneTap] = useState(false);
   const [show, setShow] = useState(true);
   const [symData, setSymData] = useState([...data]);
   const [selectedSymptom, setSelectedSymptom] = useState([]);
@@ -67,13 +67,15 @@ export default function OneTap() {
         </p>
       </div>
       <div className="selection container">
-        <button className="btn btn-primary">Yes</button>
+        <button className="btn btn-primary" onClick={() => {
+          setShowOneTap(true); console.log('Clicked on Yes Button')
+        }}>Yes</button>
         <button className="btn btn-secondary">
           No, I want to see a specialist
         </button>
       </div>
       <hr></hr>
-      <div className="container">
+      {showOneTap ? <div className="container">
         <div className="d-flex justify-content-between">
           <p className="text-1">
             Please select 0-3 Symptoms and Let Us Generate a Prescription for
@@ -90,43 +92,29 @@ export default function OneTap() {
         </div>
         {/*  symptoms cards component  */}
         <div className="d-flex flex-wrap ">
-          {(show?symData.slice(0,15):symData).map((x, i) => {
+          {(show ? symData.slice(0, 15) : symData).map((x, i) => {
             return (
               <div
                 key={i}
                 onClick={() => {
                   handleSymptomColor(i);
                 }}
-                className={`m-2 ${
-                  selectedSymptom.includes(i)
+                className={`m-2 ${selectedSymptom.includes(i)
                     ? "selectedSymptomColor"
                     : "sym-card"
-                }`}
+                  }`}
               >
                 {x}
               </div>
             );
           })}
         </div>
-        <button onClick={() => setShowModal(true)}>sfdvsfvsfvsfv</button>
-        
         {/* symptom component ends */}
         <div className="d-flex justify-content-center mt-4 mb-5">
           <button className="btn btn-submit">Generate Prescription</button>
         </div>
-      </div>
-      <div>
-        <Modal open={showModal}>
-          <Box>
-            <Typography id="modal-modal-title" variant="h6" component="h2">
-              Text in a modal
-            </Typography>
-            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-              Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-            </Typography>
-          </Box>
-        </Modal>
-      </div>
+      </div> : null}
+      
     </div>
   );
 }
