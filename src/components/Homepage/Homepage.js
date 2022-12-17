@@ -7,7 +7,6 @@ import superCharge from "../../assets/div.svg";
 import feature1 from "../../assets/feature1.svg";
 import arrow from "../../assets/arrow.svg";
 
-
 const useStyles = makeStyles({
   root: {
     background: "#025F4C",
@@ -60,7 +59,6 @@ const useStyles = makeStyles({
     fontSize: "14px",
   },
 
-
   trusted: {
     background: " #FFFFFF",
   },
@@ -80,9 +78,7 @@ export default function Homepage() {
   return (
     <div className={classes.root}>
       <div className={classes.main}>
-
         <div className={`${classes.firstContent} my-5`}>
-
           <div className={classes.grid}>
             {" "}
             <span className={classes.textColor}>
@@ -113,7 +109,6 @@ export default function Homepage() {
           <img alt="img1" src={img1} />
         </div>
       </div>
-
 
       <div className={`${classes.trusted} `}>
         <div className="align-items-lg-start container d-flex justify-content-between py-5">
@@ -172,7 +167,6 @@ export default function Homepage() {
           <img src={feature1} alt="feature1" className="img-fluid" />
         </div>
       </div>
-
     </div>
   );
 }

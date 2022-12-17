@@ -14,7 +14,7 @@ const useStyles = makeStyles({
     top: 0,
     right: 0,
     left: 0,
-    zIndex:9999
+    zIndex: 9999,
   },
   nav: {
     color: "#ffffff",
@@ -56,9 +56,7 @@ const useStyles = makeStyles({
 export default function Header() {
   const classes = useStyles();
   return (
-
     <div className={classes.main} spacing={12}>
-
       <div>
         <img src={logo} alt="logo" />
       </div>
