@@ -2,6 +2,7 @@ import React from "react";
 import logo from "../../../assets/DaacSaabLogo.svg";
 import { makeStyles } from "@mui/styles";
 import "../css/header.css";
+import { Grid } from "@mui/material";
 
 const useStyles = makeStyles({
   main: {
@@ -55,7 +56,9 @@ const useStyles = makeStyles({
 export default function Header() {
   const classes = useStyles();
   return (
-    <div className={`${classes.main} `} spacing={12}>
+
+    <div className={classes.main} spacing={12}>
+
       <div>
         <img src={logo} alt="logo" />
       </div>
