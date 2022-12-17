@@ -1,7 +1,12 @@
 import React from "react";
 import { makeStyles } from "@mui/styles";
 import img1 from "../../assets/home1.svg";
-import { padding } from "@mui/system";
+
+import testomonial from "../../assets/openlightbox.svg";
+import superCharge from "../../assets/div.svg";
+import feature1 from "../../assets/feature1.svg";
+import arrow from "../../assets/arrow.svg";
+
 
 const useStyles = makeStyles({
   root: {
@@ -54,6 +59,20 @@ const useStyles = makeStyles({
     fontWeight: 400,
     fontSize: "14px",
   },
+
+
+  trusted: {
+    background: " #FFFFFF",
+  },
+  testomonialText: {
+    color: "#025F4C",
+    fontWeight: 500,
+    fontSize: "23.408px",
+  },
+  featureDiv: {
+    border: " 1px solid #36D6C3",
+    borderRadius: "48.1712px",
+  },
 });
 
 export default function Homepage() {
@@ -61,7 +80,9 @@ export default function Homepage() {
   return (
     <div className={classes.root}>
       <div className={classes.main}>
-        <div className={classes.firstContent}>
+
+        <div className={`${classes.firstContent} my-5`}>
+
           <div className={classes.grid}>
             {" "}
             <span className={classes.textColor}>
@@ -92,6 +113,66 @@ export default function Homepage() {
           <img alt="img1" src={img1} />
         </div>
       </div>
+
+
+      <div className={`${classes.trusted} `}>
+        <div className="align-items-lg-start container d-flex justify-content-between py-5">
+          <img alt="testemonial" src={testomonial} className="img-fluid mx-5" />
+          <span className={`${classes.testomonialText} col-3`}>
+            Trusted by 13K+ happy patients and their families
+          </span>
+        </div>
+        <div className="container my-5">
+          <img src={superCharge} alt="superCharge" className="img-fluid ms-5" />
+        </div>
+      </div>
+      <div className={`container ${classes.featureDiv}`}>
+        <div className="d-flex justify-content-around">
+          <img src={feature1} alt="feature1" className="img-fluid" />
+          <div className="d-flex flex-column col-3">
+            <span className="featureText">
+              Benefits your family<span className=""> will love</span>
+            </span>
+            <span className="chatText">
+              <img src={arrow} alt="arrow" className="img-fluid me-3" />
+              Chat with a family doctor 24/7
+            </span>
+            <span className="chatText">
+              <img src={arrow} alt="arrow" className="img-fluid me-3" />
+              Get help with any condition
+            </span>
+            <p className="consultationText">
+              24/7 Virtual Consultations with our team of doctors. Text your
+              doctor, anytime. Locate nearby partnered hospitals easily.
+            </p>
+
+            <button className="learnMoreBtn col-5">Learn more</button>
+          </div>
+        </div>
+        <div className="d-flex justify-content-around">
+          <div className="d-flex flex-column col-3">
+            <span className="featureText1">
+              Benefits your family<span className=""> will love</span>
+            </span>
+            <span className="chatTextOne">
+              <img src={arrow} alt="arrow" className="img-fluid me-3" />
+              Chat with a family doctor 24/7
+            </span>
+            <span className="chatTextOne">
+              <img src={arrow} alt="arrow" className="img-fluid me-3" />
+              Get help with any condition
+            </span>
+            <p className="consultationText">
+              24/7 Virtual Consultations with our team of doctors. Text your
+              doctor, anytime. Locate nearby partnered hospitals easily.
+            </p>
+
+            <button className="learnMoreBtn col-5">Learn more</button>
+          </div>
+          <img src={feature1} alt="feature1" className="img-fluid" />
+        </div>
+      </div>
+
     </div>
   );
 }

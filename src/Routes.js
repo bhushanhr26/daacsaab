@@ -9,6 +9,7 @@ export default function DaacSaabRoutes() {
       <Routes>
         <Route exact path="/" element={<Homepage />} />
         <Route exact path="/One-tap" element={<OneTap />} />
+
       </Routes>
     </Suspense>
   );

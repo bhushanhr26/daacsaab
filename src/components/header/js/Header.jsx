@@ -56,7 +56,9 @@ const useStyles = makeStyles({
 export default function Header() {
   const classes = useStyles();
   return (
+
     <div className={classes.main} spacing={12}>
+
       <div>
         <img src={logo} alt="logo" />
       </div>
