@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@mui/styles";
 import home from "../../../assets/home1.svg";
 import "../css/homepage.css";
@@ -13,6 +13,8 @@ import img2 from "../../../assets/img2.svg";
 import img3 from "../../../assets/img3.svg";
 import img4 from "../../../assets/img4.svg";
 import videoCall from "../../../assets/videoCall.svg";
+import LoginPage from "../../../components/Login/js/LoginPage";
+import { isMobile } from "react-device-detect";
 
 const useStyles = makeStyles({
   root: {
@@ -81,12 +83,17 @@ const useStyles = makeStyles({
 });
 
 export default function Homepage() {
+  const [showLogin, setShowLogin] = useState(false);
   const classes = useStyles();
   return (
     <>
       <div className={classes.root}>
         <div className={classes.main}>
-          <div className={`${classes.firstContent} my-5`}>
+          <div
+            className={`${classes.firstContent} ${
+              isMobile ? "flex-wrap" : ""
+            } my-5`}
+          >
             <div className={classes.grid}>
               {" "}
               <span className={classes.textColor}>
@@ -114,18 +121,30 @@ export default function Homepage() {
                 </div>
               </div>
             </div>
-            <img alt="img1" src={home} />
+            <img
+              alt="img1"
+              src={home}
+              className={`${isMobile ? "col-10" : ""} img-fluid`}
+            />
           </div>
         </div>
 
         <div className={`${classes.trusted} `}>
-          <div className="align-items-lg-start container d-flex justify-content-between py-5">
+          <div
+            className={`${
+              isMobile ? "flex-wrap justify-content-around" : "justify-content-between"
+            } align-items-lg-start container d-flex  py-5`}
+          >
             <img
               alt="testemonial"
               src={testomonial}
-              className="img-fluid mx-5"
+              className={`${isMobile ? "col-10" : ""} img-fluid mx-5`}
             />
-            <span className={`${classes.testomonialText} col-3`}>
+            <span
+              className={`${classes.testomonialText} ${
+                isMobile ? "col-10" : "col-3"
+              }`}
+            >
               Trusted by 13K+ happy patients and their families
             </span>
           </div>
@@ -133,14 +152,18 @@ export default function Homepage() {
             <img
               src={superCharge}
               alt="superCharge"
-              className="img-fluid ms-5"
+              className={`${isMobile ? "col-10" : ""} img-fluid ms-5`}
             />
           </div>
         </div>
         <div className={`container ${classes.featureDiv} py-5`}>
-          <div className="d-flex justify-content-around py-5">
+          <div
+            className={`${
+              isMobile ? "flex-wrap" : ""
+            } d-flex justify-content-around py-5`}
+          >
             <img src={feature1} alt="feature1" className="img-fluid" />
-            <div className="d-flex flex-column col-3">
+            <div className={`${isMobile ? "" : "col-3"} d-flex flex-column `}>
               <span className="featureText mb-3">
                 Benefits your family<span className=""> will love</span>
               </span>
@@ -160,8 +183,12 @@ export default function Homepage() {
               <button className="learnMoreBtn col-5">Learn more</button>
             </div>
           </div>
-          <div className="d-flex justify-content-around py-5">
-            <div className="d-flex flex-column col-3">
+          <div
+            className={`${
+              isMobile ? "flex-wrap" : ""
+            } d-flex justify-content-around py-5`}
+          >
+            <div className={`${isMobile ? "" : "col-3"} d-flex flex-column `}>
               <span className="featureText1 mb-3">
                 Get prescription for general diseases in minutes
                 <span className=""> not days</span>
@@ -177,7 +204,11 @@ export default function Homepage() {
 
               <button className="learnMoreBtn col-5">Learn more</button>
             </div>
-            <img src={feature2} alt="feature1" className="img-fluid" />
+            <img
+              src={feature2}
+              alt="feature1"
+              className={`${isMobile ? "mt-3" : ""} img-fluid`}
+            />
           </div>
         </div>
         <div className="container my-5 py-5">
@@ -188,11 +219,11 @@ export default function Homepage() {
           </div>
           <div className="col-12 d-flex justify-content-around m-3">
             <div className="col-4 d-flex displayCard flex-wrap justify-content-around p-3">
-              <img src={img1} />
+              <img src={img1} alt="img-1" />
               <span className="col-7">Text your doctor, anytime you need</span>
             </div>
             <div className="col-4 d-flex displayCard flex-wrap justify-content-around p-3 ">
-              <img src={img2} />
+              <img src={img2} alt="img-2" />
               <span className="col-7">
                 24/7 consultations with curated doctors
               </span>
@@ -200,13 +231,13 @@ export default function Homepage() {
           </div>
           <div className="col-12 d-flex justify-content-around m-3">
             <div className="col-4 d-flex displayCard flex-wrap justify-content-around p-3 ">
-              <img src={img3} />
+              <img src={img3} alt="" img-3 />
               <span className="col-7">
                 Set up a family doctor for your entire family
               </span>
             </div>
             <div className="col-4 d-flex displayCard flex-wrap justify-content-around p-3">
-              <img src={img4} />
+              <img src={img4} alt="img4" />
               <span className="col-7">Insurance with claims support</span>
             </div>
           </div>
@@ -226,6 +257,7 @@ export default function Homepage() {
           <button className="videoBtn col-4">Learn more</button>
         </div>
       </div>
+      <LoginPage showLogin={showLogin} setShowLogin={setShowLogin} />
     </>
   );
 }
