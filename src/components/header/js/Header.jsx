@@ -2,7 +2,7 @@ import React from "react";
 import logo from "../../../assets/DaacSaabLogo.svg";
 import { makeStyles } from "@mui/styles";
 import "../css/header.css";
-import { Grid } from "@mui/material";
+import { useParams, useNavigate } from "react-router-dom";
 
 const useStyles = makeStyles({
   main: {
@@ -36,10 +36,9 @@ const useStyles = makeStyles({
     alignItems: "center",
   },
   navbarBtn: {
-    width: "10%",
     textAlign: "center",
     display: "flex",
-    justifyContent: "space-around",
+    justifyContent: "space-evenly",
     alignItems: "center",
   },
   signUpBtn: {
@@ -55,17 +54,21 @@ const useStyles = makeStyles({
 
 export default function Header() {
   const classes = useStyles();
+  const params = useParams();
+  const navigate = useNavigate();
   return (
     <div className={classes.main} spacing={12}>
-      <div>
+      <div onClick={() => navigate("home")}>
         <img src={logo} alt="logo" />
       </div>
       <div className={classes.navbar}>
         <span className={classes.nav}>Product Features</span>
-        <span className={classes.nav}>About us</span>
+        <span className={classes.nav}>
+          {params === "doctor" ? "Healthcare" : "About us"}
+        </span>
         <span className={classes.nav}>Resoures</span>
       </div>
-      <div className={classes.navbarBtn}>
+      <div className={`${classes.navbarBtn} col-2`}>
         <button className={classes.logInBtn}>Login</button>
         <button className={classes.signUpBtn}>SignUp</button>
       </div>
